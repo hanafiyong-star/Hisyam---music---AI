@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hisyam Music AI</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d12;
+  color: white;
+}
+
+.app {
+  max-width: 600px;
+  margin: auto;
+  padding: 22px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.logo span {
+  color: #9b5cff;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-top: 6px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #18181f;
+  padding: 20px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  font-weight: bold;
+}
+
+textarea, select {
+  width: 100%;
+  background: #24242d;
+  color: white;
+  border: 1px solid #3b3b47;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 17px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.generate {
+  background: linear-gradient(90deg,#7c3cff,#d34cff);
+  color: white;
+}
+
+.generate:active {
+  transform: scale(.98);
+}
+
+.result {
+  display: none;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.music-icon {
+  font-size: 65px;
+  margin: 15px;
+}
+
+.small {
+  color: #999;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="logo">🎵 Hisyam <span>Music AI</span></div>
+  <div class="subtitle">Turn your story into music.</div>
+
+  <div class="card">
+
+    <label>What is your song about?</label>
+
+    <textarea id="idea"
+      placeholder="Example: A happy jazz love song for my wife who is coming home soon..."></textarea>
+
+    <label>Lyrics</label>
+    <select id="lyrics">
+      <option>AI writes my lyrics</option>
+      <option>I will provide my own lyrics</option>
+    </select>
+
+    <div class="row">
+
+      <div>
+        <label>Singer</label>
+        <select id="voice">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Language</label>
+        <select id="language">
+          <option>Malay</option>
+          <option>English</option>
+          <option>Chinese</option>
+          <option>Indonesian</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div>
+        <label>Music Style</label>
+        <select id="style">
+          <option>Jazz</option>
+          <option>Blues</option>
+          <option>Pop</option>
+          <option>Rock</option>
+          <option>Ballad</option>
+          <option>R&B</option>
+          <option>Acoustic</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Mood</label>
+        <select id="mood">
+          <option>Happy</option>
+          <option>Romantic</option>
