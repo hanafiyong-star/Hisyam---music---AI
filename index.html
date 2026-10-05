@@ -173,3 +173,31 @@ button {
         <select id="mood">
           <option>Happy</option>
           <option>Romantic</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="generateBtn" type="button">
+        🎵 Generate Song
+      </button>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("generateBtn").addEventListener("click", function () {
+      const idea = document.getElementById("idea").value.trim();
+
+      if (!idea) {
+        alert("Please enter your song idea or lyrics first.");
+        return;
+      }
+
+      document.getElementById("result").innerHTML =
+        "<p>🎵 Your song is being prepared...</p>";
+    });
+  </script>
+
+</body>
+  </html>
